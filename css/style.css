@@ -39,6 +39,7 @@ body {
 label,
 input {
     display: block;
+    text-align: center;
     margin: 12px auto;
     font-size: 20px;
 }
@@ -67,4 +68,10 @@ input[type="button"] {
     font-size: 24px;
     font-family: 標楷踢;
     padding: 6px 24px;
+}
+
+@media screen and(max-width:768px) {
+    #container {
+        width: 100%;
+    }
 }
