@@ -1,0 +1,70 @@
+body {
+    background-color: gold;
+
+}
+
+#container {
+    width: 80%;
+    margin: 24px auto;
+    text-align: center;
+}
+
+.title {
+    background-color: orange;
+    padding: 20px;
+    font-size: 32px;
+    display: inline-block;
+}
+
+#timer {
+    margin-top: 12px;
+}
+
+.text-1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+}
+
+#form {
+    background-color: orange;
+    width: 80%;
+    margin: 24px auto;
+    text-align: center;
+    padding: 24px 0;
+    border-radius: 12px;
+}
+
+label,
+input {
+    display: block;
+    margin: 12px auto;
+    font-size: 20px;
+}
+
+input[type="text"] {
+    font-size: 24px;
+}
+
+input[type="button"] {
+    margin-top: 20px;
+    background-color: azure;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+}
+
+#result {
+    font-size: 88px;
+    font-family: 標楷體;
+    color: red;
+}
+
+#result-text {
+    margin: 24px;
+    font-size: 24px;
+    font-family: 標楷踢;
+    padding: 6px 24px;
+}
