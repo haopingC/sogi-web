@@ -6,6 +6,7 @@ const analyticsEl = document.querySelector("#analytics");
 const resultEl = document.querySelector("#result");
 const resultTextEl = document.querySelector("#result-text");
 const timeEl = document.querySelector("#time");
+const resultComment = ["吉", "吉帶兇", "凶帶吉", "凶"]
 
 console.log(phoneEl, analyticsEl, resultEl, resultTextEl, timeEl);
 
@@ -33,11 +34,7 @@ function analytics() {
     let code = analyticsPhoneNumber(phoneNumber)
 
     let result = ResultText[code - 1];
-    console.log(result);
-    resultEl.innerText = result[2];
-    resultTextEl.innerText = result[1];
-
-    resultEl.style.color = resultEl.innerText == "吉" || resultEl.innerText == "吉帶兇" ? "yellow" : "black";
+    flashReault(result);
     /*
     if (resultEl.innerText == "吉" || resultEl.innerText == "吉帶兇") {
         resultEl.style.color = "yellow"
@@ -45,7 +42,34 @@ function analytics() {
         resultEl.style.color = "red"
     }*/
 }
-getTime();
+let flashCount = 0;
+function flashReault(result) {
+    //顯示亂數結果
+    let comment = resultComment[getRandInt(0, resultComment.length - 1)];
+    resultEl.innerText = comment;
+    //製作閃爍功能
+    if (flashCount++ < 100) {
+        setTimeout(
+            function () {
+                flashReault(result)
+            }
+            , getRandInt(5, 15));
+        return;
+    }
+    flashCount = 0;
+    //最後顯示結果
+    console.log(result);
+    resultEl.innerText = result[2];
+    resultTextEl.innerText = result[1];
+    //三元運算子
+    resultEl.style.color = resultEl.innerText == "吉" || resultEl.innerText == "吉帶兇" ? "yellow" : "black";
+}
+
+function getRandInt(start, end) {
+    return Math.floor(Math.random() * (end - start + 1)) + start;
+}
+
+
 
 function getTime() {
     let date = new Date();
