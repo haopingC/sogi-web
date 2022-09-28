@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body onload="getTime()">
     <div id="container">
         <div class="title">
             手機號碼吉凶占卜
         </div>
-        <div id="timer">
-            日期:
+        <div id="time">
+            日期
         </div>
         <p>
             手機號碼一跟10年，<span class="text-1">號碼選得好，人生沒煩惱!!</span>
@@ -26,7 +26,7 @@
             <input type="text" id="phone-number" maxlength="10">
 
             <div id="result">
-                吉
+                占
             </div>
             <input type="button" id="analytics" value="測算" onclick="analytics()">
             <div id="result-text">Lorem ipsum dolor</div>
